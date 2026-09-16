@@ -23,8 +23,8 @@ def run(app):
 
 def check_doppio():
     from click.testing import CliRunner
-    from doppio.commands import add_spa, add_desk_page
-    for command in [add_spa, add_desk_page]:
+    from doppio.commands import generate_spa, add_desk_page
+    for command in [generate_spa, add_desk_page]:
         result = CliRunner().invoke(command, ['--help'])
         assert result.exit_code == 0, result.output
         assert '--app' in result.output
